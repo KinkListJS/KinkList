@@ -28,6 +28,11 @@ function draw(){
 function mouseClicked(){
   choiceBubbles.update();
   if(mouseX>1380 && mouseY>620 && mouseX<1400 && mouseY<640)saveForm();
+  if(mouseX>100&& mouseY>0 && mouseX<120 && mouseY<20){
+    selectedState += -1;
+    if(selectedState > 5) selectedState = 0;
+    else if (selectedState < 0) selectedState = 5;
+  }
 }
 function mouseWheel(event) {
   selectedState += event.delta/-100;
