@@ -965,7 +965,7 @@ class bubble {
   }
   
   updateState(state){
-    if(dist(this.xPos,this.yPos,mouseX,mouseY)<=this.scale)this.currentState = state;
+    if(dist(this.xPos,this.yPos,mouseX,mouseY)<=this.scale/2)this.currentState = state;
   }
   
   drawBubble(){
@@ -976,6 +976,8 @@ class bubble {
     else if (this.currentState == 4) fill('#45FF39');
     else if (this.currentState == 5) fill('#88BDE8');
     circle(this.xPos,this.yPos,this.scale);
+    if(dist(this.xPos,this.yPos,mouseX,mouseY)<=this.scale/2){fill(0,0,0,100);circle(this.xPos,this.yPos,this.scale);}
+    
   }
 }
 
